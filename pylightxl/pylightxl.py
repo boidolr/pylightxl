@@ -1408,8 +1408,8 @@ def num2columnletters(num):
         if num[0] > 26:
             num = pre_num2alpha(num[0]) + [num[1]]
         else:
-            num = list(filter(lambda x: False if x == 0 else True, num))
+            num = list(filter(lambda x: x != 0, num))
 
         return num
 
-    return "".join(list(map(lambda x: chr(x + 64), pre_num2alpha(num))))
+    return "".join(map(lambda x: chr(x + 64), pre_num2alpha(num)))
